@@ -23,12 +23,21 @@ export const Content = styled.div`
     h1 {
       margin-bottom: 24px;
     }
+    .input-container {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      input {
+        padding: 1rem 1rem 1rem 3.5rem;
+        width: 100%;
+      }
+    }
     input {
       background: #232129;
       color: #f4ede8;
       border-radius: 10px;
       border: 2px solid #232129;
-      padding: 16px;
       width: 100%;
       &::placeholder {
         color: #666360;
