@@ -1,7 +1,10 @@
 import React from 'react';
+import GlobalStyle from './styles/globals';
 
-function App() {
-  return <div className="App" />;
-}
+const App: React.FC = () => (
+  <div className="GoBarber">
+    <GlobalStyle />
+  </div>
+);
 
 export default App;
