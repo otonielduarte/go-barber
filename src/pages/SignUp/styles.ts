@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-import signInBackground from '../../assets/sign-in-background.png';
+import signInBackground from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -13,8 +13,9 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  padding-top: 5rem;
+  padding-top: 2rem;
   max-width: 700px;
   form {
     margin: 80px 0;
@@ -35,7 +36,7 @@ export const Content = styled.div`
     }
   }
   > a {
-    color: #ff9000;
+    color: #f4ede8;
     display: block;
     margin-top: 24px;
     text-decoration: none;

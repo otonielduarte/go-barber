@@ -1,13 +1,15 @@
 import React from 'react';
-import SignIn from './pages/SignIin';
+/* import SignIn from './pages/SignIin'; */
+import SignUp from './pages/SignUp';
 
 import GlobalStyle from './styles/globals';
 
 const App: React.FC = () => (
-  <div className="GoBarber">
-    <SignIn />
+  <>
+    {/*  <SignIn /> */}
+    <SignUp />
     <GlobalStyle />
-  </div>
+  </>
 );
 
 export default App;
