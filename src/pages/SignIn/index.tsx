@@ -4,6 +4,7 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
@@ -39,7 +40,10 @@ const SignIn: React.FC = () => {
         const { email, password } = data;
         signin({ email, password });
       } catch (err) {
-        formRef.current?.setErrors(getValidationErrors(err));
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [signin],
@@ -67,10 +71,10 @@ const SignIn: React.FC = () => {
           <a href="forgot">Esqueci minha senha</a>
         </Form>
 
-        <a href="signup">
+        <Link to="/signup">
           <FiLogIn />
           Criar conta
-        </a>
+        </Link>
       </Content>
 
       <Background />

@@ -36,7 +36,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     if (response.status === 200) {
       const { token, user } = response.data;
       localStorage.setItem('@gobarber:token', token);
-      localStorage.setItem('@gobarber:user', user);
+      localStorage.setItem('@gobarber:user', JSON.stringify(user));
       setData({ token, user });
     }
   }, []);
