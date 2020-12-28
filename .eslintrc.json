@@ -45,6 +45,7 @@
       }
     ],
     "import/prefer-default-export": "off",
+    "@typescript-eslint/ban-types": "off",
     "no-use-before-define": "off",
     "prettier/prettier": "error",
     "import/extensions": [
