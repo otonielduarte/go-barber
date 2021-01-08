@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  base: &setup
+    working_dir: /app/
+    image: node:12
+    command: "yarn"
+    volumes:
+      - .:/app/
+
+  app:
+    <<: *setup
+    command: "yarn start"
+    network_mode: "host"
+    ports:
+      - 3000:3000
