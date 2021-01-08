@@ -11,11 +11,10 @@ import Button from '../../components/Button';
 import logoImg from '../../assets/logo.svg';
 import getValidationErrors from '../../utils/getValidationsErrors';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  // eslint-disable-next-line @typescript-eslint/ban-types
   const onSubmit = useCallback(async (data: object) => {
     try {
       formRef.current?.setErrors({});
@@ -38,29 +37,36 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
       <Content>
-        <img src={logoImg} alt="GoBarber" />
+        <AnimationContainer>
+          <img src={logoImg} alt="GoBarber" />
 
-        <Form onSubmit={onSubmit} ref={formRef}>
-          <h1>Faça seu cadastro</h1>
+          <Form onSubmit={onSubmit} ref={formRef}>
+            <h1>Faça seu cadastro</h1>
 
-          <Input name="name" placeholder="Nome" type="text" icon={FiUser} />
+            <Input name="name" placeholder="Nome" type="text" icon={FiUser} />
 
-          <Input name="email" placeholder="E-mail" type="email" icon={FiMail} />
+            <Input
+              name="email"
+              placeholder="E-mail"
+              type="email"
+              icon={FiMail}
+            />
 
-          <Input
-            name="password"
-            type="password"
-            placeholder="Senha"
-            icon={FiLock}
-          />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Senha"
+              icon={FiLock}
+            />
 
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <Link to="/">
-          <FiArrowLeft />
-          Voltar para login
-        </Link>
+          <Link to="/">
+            <FiArrowLeft />
+            Voltar para login
+          </Link>
+        </AnimationContainer>
       </Content>
     </Container>
   );
