@@ -18,11 +18,16 @@ const CustomRoute: React.FC<CustomRouteProps> = ({
   return (
     <Route
       {...rest}
-      render={() => {
+      render={({ location }) => {
         return isPrivate === !!user ? (
-          <Component {...rest} />
+          <Component />
         ) : (
-          <Redirect to={{ pathname: isPrivate ? '/' : '/dashboard' }} />
+          <Redirect
+            to={{
+              pathname: isPrivate ? '/' : '/dashboard',
+              state: { from: location },
+            }}
+          />
         );
       }}
     />
