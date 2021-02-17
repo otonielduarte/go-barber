@@ -6,15 +6,20 @@ interface SignInCredientials {
   password: string;
 }
 
+interface User {
+  id: string;
+  name: string;
+  avatar_url: string;
+}
 interface AuthContextProps {
-  user: object;
+  user: User;
   signOut(): void;
   signin(credentials: SignInCredientials): Promise<void>;
 }
 
 interface AuthState {
   token: string;
-  user: object;
+  user: User;
 }
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);

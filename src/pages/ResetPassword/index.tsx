@@ -3,7 +3,7 @@ import { FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationsErrors';
@@ -81,7 +81,7 @@ const ResetPassword: React.FC = () => {
         setLoading(false);
       }
     },
-    [addToast, history],
+    [addToast, history, location.search],
   );
 
   return (
