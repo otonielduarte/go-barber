@@ -7,7 +7,7 @@ ENV NODE_ENV=development
 WORKDIR /app/
 RUN yarn
 
-FROM base as dev
+FROM dependencies as dev
 WORKDIR /app/
 COPY --from=dependencies /app/node_modules node_modules/
 COPY . .
