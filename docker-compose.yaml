@@ -10,6 +10,10 @@ services:
     volumes:
       - .:/app/
 
+  coverage:
+    <<: *base
+    command: yarn test --coverage --watchAll false
+
   install:
     <<: *base
     command: "yarn"

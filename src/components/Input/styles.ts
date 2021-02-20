@@ -59,7 +59,7 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
-export const ErrorContainer = styled(Tooltip)`
+export const Error = styled(Tooltip)`
   height: 20px;
   margin-left: 1rem;
   svg {
