@@ -15,7 +15,7 @@ interface User {
 interface AuthContextProps {
   user: User;
   signOut(): void;
-  signin(credentials: SignInCredientials): Promise<void>;
+  signIn(credentials: SignInCredientials): Promise<void>;
   updateUser(user: User): void;
 }
 
@@ -52,7 +52,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   const updateUser = useCallback(
     (user: User) => {
-      localStorage.setItem('@GoBarber:user', JSON.stringify(user));
+      localStorage.setItem('@gobarber:user', JSON.stringify(user));
 
       setData({
         token: data.token,
@@ -71,7 +71,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user: data.user, signin: signIn, signOut, updateUser }}
+      value={{ user: data.user, signIn, signOut, updateUser }}
     >
       {children}
     </AuthContext.Provider>

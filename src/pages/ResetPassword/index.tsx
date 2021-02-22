@@ -62,7 +62,7 @@ const ResetPassword: React.FC = () => {
           title: 'Senha alterada com sucesso!',
         });
 
-        history.push('/signin');
+        history.push('/signIn');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
